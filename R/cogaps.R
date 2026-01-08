@@ -34,7 +34,7 @@ RunCoGAPS <- function(
 ) {
   SeuratWrappers:::CheckPackage(package = 'CoGAPS', repository = 'bioconductor')
   assay <- assay %||% DefaultAssay(object = object)
-  dat <- GetAssayData(object = object, assay = assay, slot = slot)
+  dat <- GetAssayData(object = object, assay = assay, layer = slot)
   dat <- log2(x = dat + 1)
   geneNames <- rownames(x = dat)
   sampleNames <- colnames(x = dat)
